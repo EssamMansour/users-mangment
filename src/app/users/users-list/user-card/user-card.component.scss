@@ -1,12 +1,12 @@
 .card-wrapper {
-    background-color: #f1f1f1;
+    background-color: #c8e4e4;
     box-shadow: 1px 1px 10px #ccc;
     border-radius: 20px;
     overflow: hidden;
     height: 100%;
     .img-wrapper {
         margin: 10px;
-        border: 2px solid #fff;
+        border: 2px solid var(--mainColor);
         border-radius: 50%;
         overflow: hidden;
         cursor: pointer;
@@ -25,6 +25,9 @@
         .title {
             margin-bottom: 10px;
         }
+    }
+    .view {
+        color: var(--mainColor);
     }
     
 }

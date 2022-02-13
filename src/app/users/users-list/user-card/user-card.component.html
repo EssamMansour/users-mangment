@@ -10,7 +10,7 @@
                 {{user.name}}
             </div>
             <div class="actions-wrapper d-flex  justify-content-between">
-                <a [routerLink]="[user.id]"><mat-icon>open_in_browser</mat-icon></a>
+                <a class="view" [routerLink]="[user.id]"><mat-icon>open_in_browser</mat-icon></a>
                 <a class="delete-alert" (click)="deleteUser()"> <mat-icon>delete</mat-icon></a>
             </div>
         </div>
