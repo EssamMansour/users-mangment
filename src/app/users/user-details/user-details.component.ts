@@ -19,11 +19,11 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
       this.userID = this.route.snapshot.paramMap.get('id')
+      this.loading = true;
       this.fetchUser()
   }
 
   fetchUser() {
-    this.loading = true;
     if(!this.userID) {
       this.router.navigate(['users'])
       return
