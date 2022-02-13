@@ -1,0 +1,13 @@
+.form-wrapper {
+    padding: 30px 20px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    .form-iput {
+        width: 100%;
+    }
+}
+.button-submit {
+    background-color: var(--secondaryColor);
+    border: 1px solid #ccc;
+}

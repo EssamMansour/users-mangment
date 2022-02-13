@@ -1,0 +1,22 @@
+<div class="page-wrapper">
+    <div class="container">
+        <div class="users-wrapper" *ngIf="!loading && !error">
+            <app-users-list [usersList]="users" *ngIf="users.length" (deleteEvent)="deleteUser($event)"></app-users-list>
+        </div>
+        <mat-paginator *ngIf="length"
+                [length]="length" 
+                [pageSize]="activeLimit"
+                [pageSizeOptions]="pageSizes"
+                (page)="changePage($event)"
+                aria-label="Select page">
+        </mat-paginator>
+        <ng-container *ngIf="loading">
+            <mat-spinner class="center-spinner"></mat-spinner>
+        </ng-container>
+        <ng-container *ngIf="error">
+            <div class="alert alert-danger" role="alert">
+                something went wrong please try again later
+              </div>
+        </ng-container>
+    </div>
+</div>

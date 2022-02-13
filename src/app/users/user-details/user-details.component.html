@@ -1,0 +1,43 @@
+<div class="page-wrapper" *ngIf="user">
+    <div class="container">
+        <div class="row  justify-content-center" *ngIf="!loading">
+            <div class="col-md-8">
+                <a [routerLink]="['/users']">&lt; back</a>
+                <div class="details-card">
+                    <h1 class="mb-3">Name: {{user.name}}</h1>
+                    <img class="img-fluid" *ngIf="!isImgLoaded" src="assets/images/default-avatar.png" >
+                    <img class="img-fluid"  [hidden]="!isImgLoaded" (load)="isImgLoaded = true" [src]="user.avatar || 'assets/images/default-avatar.png'" >
+                    <div class="content">
+                        <div class="row mb-3">
+                            <div class="col">
+                                Email: {{user.email}}
+                            </div>
+                            <div class="col">
+                                phone: {{user.phone}}
+                            </div>
+                        </div>
+                        <div class="date">created at: {{user.createdAt | date}}</div>
+                    </div>
+                    <div class="actions-wrapper">
+                        <a (click)="showEdit = !showEdit">
+                            <mat-icon *ngIf="!showEdit">edit</mat-icon>
+                            <mat-icon *ngIf="showEdit">close</mat-icon>
+                        </a>
+                        <a class="delete-alert" (click)="deleteUser()"> <mat-icon>delete</mat-icon></a>
+                    </div>
+                </div>
+                <div class="edit-wrapper" *ngIf="showEdit">
+                    <app-user-form [edit]="true" [user]="user" (submitEvent)="editUser($event)"></app-user-form>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="loading">
+            <mat-spinner class="center-spinner"></mat-spinner>
+        </ng-container>
+        <ng-container *ngIf="error">
+            <div class="alert alert-danger" role="alert">
+                something went wrong please try again later
+              </div>
+        </ng-container>
+    </div>
+</div>

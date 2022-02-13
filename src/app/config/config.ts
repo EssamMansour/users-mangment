@@ -1,0 +1,1 @@
+export const PAGE_SIZES = [11, 17,23, 29]

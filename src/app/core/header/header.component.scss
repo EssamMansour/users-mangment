@@ -1,0 +1,15 @@
+.navbar {
+    background-color: var(--mainColor);
+    .navbar-brand {
+        color: var(--secondaryColor);
+    }
+    .nav-link {
+        text-transform: uppercase;
+        color: var(--secondaryColor);
+        opacity: .6;
+        transition: opacity .5s ease;
+        &.active, &:hover {
+            opacity: 1;
+        }
+    }
+}

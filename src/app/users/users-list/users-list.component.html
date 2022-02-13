@@ -1,0 +1,8 @@
+<div class="row align-items-stretch">
+    <div class="col-md-4 col-xl-2 mb-4">
+        <app-new-user-card></app-new-user-card>
+    </div>
+    <div *ngFor="let user of usersList" class="col-md-4 col-xl-2 mb-4">
+        <app-user-card [user]="user" (deleteEvent)="deleteUser($event)"></app-user-card>
+    </div>
+</div>
